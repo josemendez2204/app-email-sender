@@ -1,0 +1,23 @@
+body {
+    background: url(chercher.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+
+.wrapper { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+}
+
+
+h2 {
+    position:absolute;
+    margin-left: 48%;
+    color: white;
+    
+}
