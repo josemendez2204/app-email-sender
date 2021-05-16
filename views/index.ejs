@@ -72,33 +72,30 @@
     const message= document.getElementById("message");
     const form= document.getElementById ("form")
 
-    
-
-
     form.addEventListener('submit', (e) => {
       e.preventDefault ()  
       if (firstName.value === null || firstName.value === "") {
         firstName.setAttribute("placeholder", "please write your name");
         firstName.style.borderColor="red"
-        return false
+        
     }
 
     if (lastName.value === "") {
         lastName.setAttribute("placeholder", "please write your last name");
         lastName.style.borderColor="red"
-      return false
+      
     } 
     
     if (message.value === "") {
         message.setAttribute("placeholder", "write a message");
         message.style.borderColor="red"
-        return false
+        
     } 
     
     if (subject.value === "") {
         subject.setAttribute("placeholder", "write a subject here");
         subject.style.borderColor="red"
-        return false
+        
     }
 
     if (!new RegExp(/^\w+([\.-]?\w+)+@\w+([\.:]?\w+)+(\.[a-zA-Z0-9]{2,3})+$/).test(email.value)) {
@@ -106,8 +103,13 @@
         email.setAttribute("placeholder", "invalid email");
         email.style.borderColor="red"
         return false
-    } 
         
+    } 
+
+    if (firstName.value === "" || lastName.value === "" || message.value === "" || subject.value === "") {
+      return false
+    }
+
     const data = {
       firstName: firstName.value,
       lastName: lastName.value,
