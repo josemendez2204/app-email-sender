@@ -74,20 +74,22 @@
 
     form.addEventListener('submit', (e) => {
       e.preventDefault ()  
-      if (firstName.value === null || firstName.value === "") {
+      if ( typeof firstName != "string" || firstName.value === "") {
+        firstName.value= "",
         firstName.setAttribute("placeholder", "please write your name");
         firstName.style.borderColor="red"
         
     }
 
-    if (lastName.value === "") {
+    if (lastName.value === "" || typeof lastName != 'string'){
+        lastName.value = "";
         lastName.setAttribute("placeholder", "please write your last name");
         lastName.style.borderColor="red"
       
     } 
     
-    if (message.value === "") {
-        message.setAttribute("placeholder", "write a message");
+    if (message.value === "" ) {
+       message.setAttribute("placeholder", "write a message");
         message.style.borderColor="red"
         
     } 
